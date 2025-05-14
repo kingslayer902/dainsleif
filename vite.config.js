@@ -7,12 +7,15 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+    base: './', // Pastikan sesuai dengan jalur relative saat deploy
+  build: {
+    outDir: 'dist',  }, 
   plugins: [
     vue(),
     vueDevTools(),
     tailwindcss(),
   ],  
-  base: './',
+ 
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
